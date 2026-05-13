@@ -1,0 +1,58 @@
+{
+    "vic-customer-export": {
+        "general": {
+            "title": "Exportar clientes",
+            "description": "Exporta clientes a Excel",
+            "menuLabel": "Exportar a Excel"
+        },
+        "page": {
+            "title": "Exportar clientes a Excel",
+            "exportButton": "Exportar .xlsx",
+            "gdprWarning": "⚠ Este archivo contiene datos personales de clientes (nombre, email, dirección...). Asegúrate de que su uso cumple con el RGPD: descarga solo los datos necesarios, no compartas el archivo con terceros no autorizados y elimínalo cuando ya no lo necesites.",
+            "fieldsTitle": "Seleccionar campos a exportar",
+            "orderTitle": "Orden de columnas",
+            "orderHint": "Arrastra las filas para cambiar el orden de las columnas.",
+            "filtersTitle": "Filtros",
+            "selectAll": "Seleccionar todo",
+            "selectNone": "Deseleccionar todo",
+            "filterOnlyActive": "Solo clientes activos",
+            "filterOnlyRegistered": "Solo cuentas registradas (sin invitados)",
+            "filterHasOrders": "Ha realizado al menos un pedido",
+            "filterGroup": "Grupo de clientes",
+            "filterGroupAll": "Todos los grupos",
+            "filterRegisteredFrom": "Registrado desde",
+            "filterRegisteredTo": "Registrado hasta",
+            "successMessage": "Exportación completada. La descarga del archivo ha comenzado."
+        },
+        "groups": {
+            "basic": "Datos básicos",
+            "personal": "Personal",
+            "contact": "Contacto (dirección de facturación)",
+            "account": "Cuenta",
+            "custom": "Campos personalizados"
+        },
+        "fields": {
+            "customerNumber": "Nº de cliente",
+            "firstName": "Nombre",
+            "lastName": "Apellidos",
+            "email": "Email",
+            "active": "Activo",
+            "guest": "Invitado",
+            "salutation": "Tratamiento",
+            "birthday": "Fecha de nacimiento",
+            "company": "Empresa",
+            "vatIds": "NIF/CIF",
+            "phone": "Teléfono",
+            "street": "Calle",
+            "zipcode": "Código postal",
+            "city": "Ciudad",
+            "country": "País",
+            "group": "Grupo de clientes",
+            "language": "Idioma",
+            "createdAt": "Fecha de registro",
+            "lastOrderDate": "Último pedido",
+            "orderCount": "Nº de pedidos",
+            "orderTotalAmount": "Total gastado"
+        }
+    }
+}

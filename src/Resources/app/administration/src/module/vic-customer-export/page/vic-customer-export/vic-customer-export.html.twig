@@ -1,0 +1,160 @@
+{% block vic_customer_export_page %}
+<sw-page class="vic-customer-export-page">
+
+    {% block vic_customer_export_smart_bar_header %}
+    <template #smart-bar-header>
+        <h2>{{ $tc('vic-customer-export.page.title') }}</h2>
+    </template>
+    {% endblock %}
+
+    {% block vic_customer_export_smart_bar_actions %}
+    <template #smart-bar-actions>
+        <sw-button
+            variant="primary"
+            :isLoading="isLoading"
+            :disabled="!canExport"
+            @click="onExport">
+            {{ $tc('vic-customer-export.page.exportButton') }}
+        </sw-button>
+    </template>
+    {% endblock %}
+
+    {% block vic_customer_export_content %}
+    <template #content>
+        <div class="vic-customer-export-page__content">
+
+            {% block vic_customer_export_gdpr_warning %}
+            <sw-alert variant="warning" :closable="false" class="vic-customer-export-page__gdpr">
+                {{ $tc('vic-customer-export.page.gdprWarning') }}
+            </sw-alert>
+            {% endblock %}
+
+            {% block vic_customer_export_success %}
+            <sw-alert v-if="exportSuccess" variant="success" :closable="true" @close="exportSuccess = false">
+                {{ $tc('vic-customer-export.page.successMessage') }}
+            </sw-alert>
+            {% endblock %}
+
+            {% block vic_customer_export_fields_card %}
+            <sw-card :title="$tc('vic-customer-export.page.fieldsTitle')" class="vic-customer-export-page__card">
+
+                <div class="vic-customer-export-page__fields-actions">
+                    <sw-button size="small" @click="selectAll">
+                        {{ $tc('vic-customer-export.page.selectAll') }}
+                    </sw-button>
+                    <sw-button size="small" @click="selectNone">
+                        {{ $tc('vic-customer-export.page.selectNone') }}
+                    </sw-button>
+                </div>
+
+                <div v-for="group in fieldGroups" :key="group.key" class="vic-customer-export-page__group">
+                    <p class="vic-customer-export-page__group-label">{{ $tc(group.labelKey) }}</p>
+                    <div class="vic-customer-export-page__fields-grid">
+                        <div
+                            v-for="field in fieldsInGroup(group.key)"
+                            :key="field.id"
+                            class="vic-customer-export-page__field-item">
+                            <sw-checkbox-field
+                                :label="$tc(field.labelKey)"
+                                :modelValue="isFieldSelected(field.id)"
+                                @update:modelValue="onFieldChange(field.id, $event)" />
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="!isLoadingMeta && customFieldSets.length > 0">
+                    <div
+                        v-for="set in customFieldSets"
+                        :key="set.id"
+                        class="vic-customer-export-page__group">
+                        <p class="vic-customer-export-page__group-label vic-customer-export-page__group-label--custom">
+                            {{ $tc('vic-customer-export.groups.custom') }}: {{ set.label }}
+                        </p>
+                        <div class="vic-customer-export-page__fields-grid">
+                            <div
+                                v-for="field in set.fields"
+                                :key="field.key"
+                                class="vic-customer-export-page__field-item">
+                                <sw-checkbox-field
+                                    :label="field.label"
+                                    :modelValue="isFieldSelected('custom:' + field.key)"
+                                    @update:modelValue="onFieldChange('custom:' + field.key, $event)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </sw-card>
+            {% endblock %}
+
+            {% block vic_customer_export_order_card %}
+            <sw-card
+                v-if="selectedFields.length > 0"
+                :title="$tc('vic-customer-export.page.orderTitle')"
+                class="vic-customer-export-page__card">
+
+                <p class="vic-customer-export-page__order-hint">{{ $tc('vic-customer-export.page.orderHint') }}</p>
+
+                <div class="vic-customer-export-page__sort-list">
+                    <div
+                        v-for="(fieldId, index) in selectedFields"
+                        :key="fieldId"
+                        class="vic-customer-export-page__sort-item"
+                        draggable="true"
+                        @dragstart="onDragStart(index)"
+                        @dragover="onDragOver($event, index)"
+                        @dragend="onDragEnd">
+                        <span class="vic-customer-export-page__sort-number">{{ index + 1 }}</span>
+                        <span class="vic-customer-export-page__sort-handle">⠿</span>
+                        <span class="vic-customer-export-page__sort-label">{{ getFieldLabel(fieldId) }}</span>
+                        <sw-button size="x-small" variant="ghost" square @click="onFieldChange(fieldId, false)">
+                            ✕
+                        </sw-button>
+                    </div>
+                </div>
+
+            </sw-card>
+            {% endblock %}
+
+            {% block vic_customer_export_filters_card %}
+            <sw-card :title="$tc('vic-customer-export.page.filtersTitle')" class="vic-customer-export-page__card">
+                <div class="vic-customer-export-page__filters">
+
+                    <sw-switch-field
+                        :label="$tc('vic-customer-export.page.filterOnlyActive')"
+                        v-model:value="filters.onlyActive" />
+
+                    <sw-switch-field
+                        :label="$tc('vic-customer-export.page.filterOnlyRegistered')"
+                        v-model:value="filters.onlyRegistered" />
+
+                    <sw-switch-field
+                        :label="$tc('vic-customer-export.page.filterHasOrders')"
+                        v-model:value="filters.hasOrders" />
+
+                    <sw-select-field
+                        :label="$tc('vic-customer-export.page.filterGroup')"
+                        :options="customerGroupOptions"
+                        v-model:value="filters.customerGroupId" />
+
+                    <div class="vic-customer-export-page__date-range">
+                        <sw-datepicker
+                            :label="$tc('vic-customer-export.page.filterRegisteredFrom')"
+                            dateType="date"
+                            v-model:value="filters.registeredFrom" />
+                        <sw-datepicker
+                            :label="$tc('vic-customer-export.page.filterRegisteredTo')"
+                            dateType="date"
+                            v-model:value="filters.registeredTo" />
+                    </div>
+
+                </div>
+            </sw-card>
+            {% endblock %}
+
+        </div>
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}

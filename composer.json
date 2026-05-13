@@ -1,0 +1,35 @@
+{
+    "name": "vicmescan/vic-customer-export",
+    "description": "Export customers to Excel (.xlsx) from the Shopware admin",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vicmescan",
+            "homepage": "https://github.com/Vicmescan"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.7.0",
+        "phpoffice/phpspreadsheet": "^3.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Vic\\CustomerExport\\VicCustomerExport",
+        "label": {
+            "de-DE": "Kunden-Export (Excel)",
+            "en-GB": "Customer Export (Excel)",
+            "es-ES": "Exportar clientes (Excel)"
+        },
+        "description": {
+            "de-DE": "Exportiert Kunden als .xlsx-Datei aus dem Admin-Bereich.",
+            "en-GB": "Exports customers as a .xlsx file from the admin panel.",
+            "es-ES": "Exporta clientes como archivo .xlsx desde el panel de administración."
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Vic\\CustomerExport\\": "src/"
+        }
+    }
+}

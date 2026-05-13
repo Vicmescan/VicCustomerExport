@@ -1,0 +1,58 @@
+{
+    "vic-customer-export": {
+        "general": {
+            "title": "Kunden-Export",
+            "description": "Kunden als Excel exportieren",
+            "menuLabel": "Excel-Export"
+        },
+        "page": {
+            "title": "Kunden als Excel exportieren",
+            "exportButton": ".xlsx exportieren",
+            "gdprWarning": "⚠ Diese Datei enthält persönliche Kundendaten (Name, E-Mail, Adresse...). Stellen Sie sicher, dass die Nutzung der DSGVO entspricht: Laden Sie nur die notwendigen Daten herunter, geben Sie die Datei nicht an unbefugte Dritte weiter und löschen Sie sie, wenn sie nicht mehr benötigt wird.",
+            "fieldsTitle": "Felder auswählen",
+            "orderTitle": "Spaltenreihenfolge",
+            "orderHint": "Zeilen ziehen, um die Spaltenreihenfolge zu ändern.",
+            "filtersTitle": "Filter",
+            "selectAll": "Alle auswählen",
+            "selectNone": "Alle abwählen",
+            "filterOnlyActive": "Nur aktive Kunden",
+            "filterOnlyRegistered": "Nur registrierte Konten (keine Gäste)",
+            "filterHasOrders": "Hat mindestens eine Bestellung aufgegeben",
+            "filterGroup": "Kundengruppe",
+            "filterGroupAll": "Alle Gruppen",
+            "filterRegisteredFrom": "Registriert ab",
+            "filterRegisteredTo": "Registriert bis",
+            "successMessage": "Export abgeschlossen. Der Datei-Download wurde gestartet."
+        },
+        "groups": {
+            "basic": "Grunddaten",
+            "personal": "Persönlich",
+            "contact": "Kontakt (Rechnungsadresse)",
+            "account": "Konto",
+            "custom": "Zusatzfelder"
+        },
+        "fields": {
+            "customerNumber": "Kundennummer",
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "email": "E-Mail",
+            "active": "Aktiv",
+            "guest": "Gast",
+            "salutation": "Anrede",
+            "birthday": "Geburtstag",
+            "company": "Firma",
+            "vatIds": "USt-IdNr.",
+            "phone": "Telefon",
+            "street": "Straße",
+            "zipcode": "PLZ",
+            "city": "Stadt",
+            "country": "Land",
+            "group": "Kundengruppe",
+            "language": "Sprache",
+            "createdAt": "Registrierungsdatum",
+            "lastOrderDate": "Letzte Bestellung",
+            "orderCount": "Anzahl Bestellungen",
+            "orderTotalAmount": "Gesamtumsatz"
+        }
+    }
+}

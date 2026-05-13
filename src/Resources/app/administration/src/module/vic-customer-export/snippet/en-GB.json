@@ -1,0 +1,58 @@
+{
+    "vic-customer-export": {
+        "general": {
+            "title": "Customer Export",
+            "description": "Export customers to Excel",
+            "menuLabel": "Export to Excel"
+        },
+        "page": {
+            "title": "Export Customers to Excel",
+            "exportButton": "Export .xlsx",
+            "gdprWarning": "⚠ This file contains personal customer data (name, email, address...). Ensure its use complies with GDPR: only download the data you need, do not share the file with unauthorised third parties, and delete it when no longer needed.",
+            "fieldsTitle": "Select fields to export",
+            "orderTitle": "Column order",
+            "orderHint": "Drag rows to change the column order in the exported file.",
+            "filtersTitle": "Filters",
+            "selectAll": "Select all",
+            "selectNone": "Deselect all",
+            "filterOnlyActive": "Only active customers",
+            "filterOnlyRegistered": "Registered accounts only (no guests)",
+            "filterHasOrders": "Has placed at least one order",
+            "filterGroup": "Customer group",
+            "filterGroupAll": "All groups",
+            "filterRegisteredFrom": "Registered from",
+            "filterRegisteredTo": "Registered to",
+            "successMessage": "Export complete. The file download has started."
+        },
+        "groups": {
+            "basic": "Basic",
+            "personal": "Personal",
+            "contact": "Contact (billing address)",
+            "account": "Account",
+            "custom": "Custom fields"
+        },
+        "fields": {
+            "customerNumber": "Customer No.",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "email": "Email",
+            "active": "Active",
+            "guest": "Guest",
+            "salutation": "Salutation",
+            "birthday": "Birthday",
+            "company": "Company",
+            "vatIds": "VAT IDs",
+            "phone": "Phone",
+            "street": "Street",
+            "zipcode": "ZIP code",
+            "city": "City",
+            "country": "Country",
+            "group": "Customer group",
+            "language": "Language",
+            "createdAt": "Registration date",
+            "lastOrderDate": "Last order date",
+            "orderCount": "No. of orders",
+            "orderTotalAmount": "Total spent"
+        }
+    }
+}
