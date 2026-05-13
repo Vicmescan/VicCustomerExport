@@ -4,6 +4,9 @@ A Shopware 6 plugin that lets you export customers to `.xlsx` directly from the 
 
 > **GDPR notice:** The plugin displays a permanent warning in the UI reminding users that the exported file contains personal data and must be handled in compliance with GDPR. The export endpoint is protected by Shopware's ACL system and requires the `customer:read` permission.
 
+<img width="1433" height="878" alt="Captura desde 2026-05-13 10-10-44" src="https://github.com/user-attachments/assets/4d618a37-ee53-4b39-9eb0-c8c1aa7aa393" />
+<img width="1433" height="909" alt="Captura desde 2026-05-13 10-11-19" src="https://github.com/user-attachments/assets/f3b4e80a-1cd3-45c3-87c5-42dadd4cce3f" />
+
 ---
 
 ## Features
