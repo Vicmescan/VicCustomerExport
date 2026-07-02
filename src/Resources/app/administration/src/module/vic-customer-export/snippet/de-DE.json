@@ -54,5 +54,12 @@
             "orderCount": "Anzahl Bestellungen",
             "orderTotalAmount": "Gesamtumsatz"
         }
+    },
+    "sw-privileges": {
+        "permissions": {
+            "vic_customer_export": {
+                "label": "Kunden-Export"
+            }
+        }
     }
 }

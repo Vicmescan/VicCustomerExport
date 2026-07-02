@@ -2,6 +2,7 @@ import enGB from './snippet/en-GB.json';
 import deDE from './snippet/de-DE.json';
 import esES from './snippet/es-ES.json';
 
+import './acl';
 import './page/vic-customer-export';
 
 Shopware.Locale.extend('en-GB', enGB);
@@ -20,6 +21,9 @@ Shopware.Module.register('vic-customer-export', {
         index: {
             component: 'vic-customer-export-page',
             path: 'index',
+            meta: {
+                privilege: 'vic_customer_export.viewer',
+            },
         },
     },
 
@@ -31,6 +35,7 @@ Shopware.Module.register('vic-customer-export', {
             path: 'vic.customer.export.index',
             parent: 'sw-customer',
             position: 100,
+            privilege: 'vic_customer_export.viewer',
         },
     ],
 });

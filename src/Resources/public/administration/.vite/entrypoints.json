@@ -1,0 +1,25 @@
+{
+  "base": "/bundles/viccustomerexport/administration/",
+  "entryPoints": {
+    "vic-customer-export": {
+      "css": [
+        "/bundles/viccustomerexport/administration/assets/vic-customer-export-CoNueudB.css"
+      ],
+      "dynamic": [],
+      "js": [
+        "/bundles/viccustomerexport/administration/assets/vic-customer-export-SxnE4gJ8.js"
+      ],
+      "legacy": false,
+      "preload": []
+    }
+  },
+  "legacy": false,
+  "metadatas": {},
+  "version": [
+    "7.1.0",
+    7,
+    1,
+    0
+  ],
+  "viteServer": null
+}

@@ -54,5 +54,12 @@
             "orderCount": "Nº de pedidos",
             "orderTotalAmount": "Total gastado"
         }
+    },
+    "sw-privileges": {
+        "permissions": {
+            "vic_customer_export": {
+                "label": "Exportar clientes"
+            }
+        }
     }
 }

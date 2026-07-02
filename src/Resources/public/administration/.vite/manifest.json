@@ -1,0 +1,11 @@
+{
+  "main.js": {
+    "file": "assets/vic-customer-export-SxnE4gJ8.js",
+    "name": "vic-customer-export",
+    "src": "main.js",
+    "isEntry": true,
+    "css": [
+      "assets/vic-customer-export-CoNueudB.css"
+    ]
+  }
+}
